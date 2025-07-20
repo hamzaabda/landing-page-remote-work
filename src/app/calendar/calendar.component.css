@@ -1,0 +1,37 @@
+/* Container centré avec un max-width et padding */
+.calendar-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustement du calendrier FullCalendar via ::ng-deep pour styles encapsulés */
+:host ::ng-deep .fc {
+  width: 100% !important; /* Prend toute la largeur du container */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Style optionnel pour les jours actifs (par exemple) */
+:host ::ng-deep .fc-daygrid-day:hover {
+  background-color: #e9f5ff;
+  cursor: pointer;
+}
+
+/* Personnalisation boutons FullCalendar */
+:host ::ng-deep .fc-toolbar button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+:host ::ng-deep .fc-toolbar button:hover {
+  background-color: #0056b3;
+}
