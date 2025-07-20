@@ -1,0 +1,42 @@
+.register-container {
+  margin-top: 80px;
+
+  .card {
+    background-color: #fff;
+    border-radius: 1rem;
+
+    h2 {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .input-group-text {
+      background-color: #f1f1f1;
+      border-right: 0;
+      color: #555;
+    }
+
+    .form-control {
+      border-left: 0;
+
+      &:focus {
+        box-shadow: none;
+        border-color: #198754;
+    }
+
+    button {
+      font-weight: 500;
+      border-radius: 0.5rem;
+    }
+
+    a {
+      font-size: 0.9rem;
+      color: #198754;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+}
