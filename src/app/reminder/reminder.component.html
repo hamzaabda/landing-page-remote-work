@@ -1,0 +1,26 @@
+<div class="reminder container mt-5">
+  <h2 class="mb-4 text-center">⏰ Reminder</h2>
+
+  <form (submit)="addReminder()" class="row g-2 align-items-end mb-4">
+    <div class="col-md-6">
+      <label for="reminderText" class="form-label">Reminder</label>
+      <input type="text" class="form-control" id="reminderText" [(ngModel)]="reminderText" name="reminderText" placeholder="Enter a reminder" required />
+    </div>
+    <div class="col-md-4">
+      <label for="reminderDate" class="form-label">Date</label>
+      <input type="date" class="form-control" id="reminderDate" [(ngModel)]="reminderDate" name="reminderDate" required />
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-success w-100" type="submit">Add</button>
+    </div>
+  </form>
+
+  <ul class="list-group">
+    <li *ngFor="let r of reminders; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <strong>{{ r.text }}</strong> - <small>{{ r.date | date }}</small>
+      </div>
+      <button class="btn btn-sm btn-outline-danger" (click)="removeReminder(i)">Remove</button>
+    </li>
+  </ul>
+</div>

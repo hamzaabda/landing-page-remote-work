@@ -3,78 +3,61 @@
     <!-- logo and hamburger icon -->
     <div class="logo-container">
       <a routerLink="/">
-        <img
-          src="../../assets/images/logo.svg"
-          alt="logo"
-          class="img-fluid d-block me-auto"
-        />
+        <img src="../../assets/images/logo.svg" alt="logo" class="img-fluid d-block me-auto" />
       </a>
       <button class="h1 bg-transparent border-0" (click)="pannelToggle()">
         <i class="bi bi-list"></i>
       </button>
     </div>
 
-    <!-- navigation links and buttons -->
+    <!-- navigation links -->
     <div class="links-container">
-      <!-- drop down menu 1 -->
+      <!-- Features dropdown -->
       <div class="dropdown-container">
         <a (click)="featuresToggle()" role="button">
           Features
           <span>
-            <img
-              src="../../assets/images/icon-arrow-down.svg"
-              [ngClass]="featureChevron ? 'chevron-rotate' : 'chevron'"
-              alt="arrow"
-            />
+            <img src="../../assets/images/icon-arrow-down.svg"
+              [ngClass]="featureChevron ? 'chevron-rotate' : 'chevron'" alt="arrow" />
           </span>
         </a>
-        <div
-          (mouseleave)="featuresToggle()"
-          [ngClass]="featureChevron ? 'dropdown-active' : ''"
-          class="dropdown-content card shadow"
-        >
-          <a routerLink="#" class="mb-2">
+        <div (mouseleave)="featuresToggle()" [ngClass]="featureChevron ? 'dropdown-active' : ''"
+          class="dropdown-content card shadow">
+          <a routerLink="/todo-list" class="mb-2">
             <img src="../../assets/images/icon-todo.svg" alt="todo" /> Todo List
           </a>
           <a routerLink="/calendar" class="mb-2">
             <img src="../../assets/images/icon-calendar.svg" alt="calendar" /> Calendar
           </a>
-          <a routerLink="#" class="mb-2">
+          <a routerLink="/reminder" class="mb-2">
             <img src="../../assets/images/icon-reminders.svg" alt="reminder" /> Reminder
           </a>
-          <a routerLink="#" class="mb-2">
+          <a routerLink="/planning" class="mb-2">
             <img src="../../assets/images/icon-planning.svg" alt="planning" /> Planning
           </a>
         </div>
       </div>
 
-      <!-- dropdown menu 2 -->
+      <!-- Company dropdown -->
       <div class="dropdown-container">
         <a (click)="companyToggle()" role="button">
           Company
           <span>
-            <img
-              src="../../assets/images/icon-arrow-down.svg"
-              [ngClass]="companyChevron ? 'chevron-rotate' : 'chevron'"
-              alt="arrow"
-            />
+            <img src="../../assets/images/icon-arrow-down.svg"
+              [ngClass]="companyChevron ? 'chevron-rotate' : 'chevron'" alt="arrow" />
           </span>
         </a>
-        <div
-          (mouseleave)="companyToggle()"
-          [ngClass]="companyChevron ? 'dropdown-active' : ''"
-          class="dropdown-content card shadow"
-          style="left: 20px"
-        >
-          <a routerLink="#" class="mb-2">History</a>
-          <a routerLink="#" class="mb-2" style="width: max-content">Our Team</a>
-          <a routerLink="#" class="mb-2">Blog</a>
+        <div (mouseleave)="companyToggle()" [ngClass]="companyChevron ? 'dropdown-active' : ''"
+          class="dropdown-content card shadow" style="left: 20px">
+          <a routerLink="/history" class="mb-2">History</a>
+          <a routerLink="/team" class="mb-2" style="width: max-content">Our Team</a>
+          <a routerLink="/blog" class="mb-2">Blog</a>
         </div>
       </div>
 
       <a routerLink="/">Home</a>
-      <a routerLink="#">Career</a>
-      <a routerLink="#">About</a>
+      <a routerLink="/feedback">Feedback</a>
+      <a routerLink="/about">About</a>
     </div>
 
     <!-- Main buttons -->
@@ -83,7 +66,7 @@
       <a routerLink="/register" class="btn btn-register btn-outline-dark">Register</a>
     </div>
 
-    <!-- side panel navigation -->
+    <!-- Side panel navigation -->
     <div class="side-pannel-container" [ngClass]="isShowPannel ? 'show-pannel' : ''">
       <div class="side-pannel card" [ngClass]="isShowPannel ? 'show-side-pannel' : ''">
         <button class="h1 close-btn" (click)="pannelToggle()">
@@ -91,60 +74,50 @@
         </button>
 
         <div class="links-container-side">
+          <!-- Features (side) -->
           <div class="dropdown-container-side">
             <a role="button" (click)="featuresToggle()">
               Features
               <span>
-                <img
-                  src="../../assets/images/icon-arrow-down.svg"
-                  [ngClass]="featureChevron ? 'chevron-rotate' : 'chevron'"
-                  alt="arrow"
-                />
+                <img src="../../assets/images/icon-arrow-down.svg"
+                  [ngClass]="featureChevron ? 'chevron-rotate' : 'chevron'" alt="arrow" />
               </span>
             </a>
-            <div
-              [ngClass]="featureChevron ? 'dropdown-side-active' : ''"
-              class="dropdown-content-side"
-            >
-              <a routerLink="#" class="mb-3">
+            <div [ngClass]="featureChevron ? 'dropdown-side-active' : ''" class="dropdown-content-side">
+              <a routerLink="/todo-list" class="mb-3">
                 <img src="../../assets/images/icon-todo.svg" alt="todo" /> Todo List
               </a>
               <a routerLink="/calendar" class="mb-3">
                 <img src="../../assets/images/icon-calendar.svg" alt="calendar" /> Calendar
               </a>
-              <a routerLink="#" class="mb-3">
+              <a routerLink="/reminder" class="mb-3">
                 <img src="../../assets/images/icon-reminders.svg" alt="reminder" /> Reminder
               </a>
-              <a routerLink="#" class="mb-3">
+              <a routerLink="/planning" class="mb-3">
                 <img src="../../assets/images/icon-planning.svg" alt="planning" /> Planning
               </a>
             </div>
           </div>
 
+          <!-- Company (side) -->
           <div class="dropdown-container-side">
             <a role="button" (click)="companyToggle()">
               Company
               <span>
-                <img
-                  src="../../assets/images/icon-arrow-down.svg"
-                  [ngClass]="companyChevron ? 'chevron-rotate' : 'chevron'"
-                  alt="arrow"
-                />
+                <img src="../../assets/images/icon-arrow-down.svg"
+                  [ngClass]="companyChevron ? 'chevron-rotate' : 'chevron'" alt="arrow" />
               </span>
             </a>
-            <div
-              [ngClass]="companyChevron ? 'dropdown-side-active2' : ''"
-              class="dropdown-content-side"
-            >
-              <a routerLink="#" class="mb-3">History</a>
-              <a routerLink="#" class="mb-3" style="width: max-content">Our Team</a>
-              <a routerLink="#" class="mb-3">Blog</a>
+            <div [ngClass]="companyChevron ? 'dropdown-side-active2' : ''" class="dropdown-content-side">
+              <a routerLink="/history" class="mb-3">History</a>
+              <a routerLink="/team" class="mb-3" style="width: max-content">Our Team</a>
+              <a routerLink="/blog" class="mb-3">Blog</a>
             </div>
           </div>
 
           <a routerLink="/" class="mb-3">Home</a>
-          <a routerLink="#" class="mb-3">Career</a>
-          <a routerLink="#" class="mb-3">About</a>
+          <a routerLink="/feedback" class="mb-3">Feedback</a>
+          <a routerLink="/about" class="mb-3">About</a>
         </div>
 
         <!-- Side buttons -->

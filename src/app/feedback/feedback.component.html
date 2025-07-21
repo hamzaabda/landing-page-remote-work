@@ -1,0 +1,59 @@
+<div class="feedback-container">
+  <h2>Feedback</h2>
+  <form (ngSubmit)="onSubmit()" #feedbackForm="ngForm" novalidate>
+    <div class="form-group">
+      <label for="name">Nom</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="feedback.name"
+        required
+        #name="ngModel"
+        placeholder="Votre nom"
+      />
+      <div class="error" *ngIf="name.invalid && name.touched">
+        Le nom est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="feedback.email"
+        required
+        email
+        #email="ngModel"
+        placeholder="Votre email"
+      />
+      <div class="error" *ngIf="email.invalid && email.touched">
+        Email valide requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        [(ngModel)]="feedback.message"
+        required
+        #message="ngModel"
+        rows="5"
+        placeholder="Votre message"
+      ></textarea>
+      <div class="error" *ngIf="message.invalid && message.touched">
+        Le message est requis.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="feedbackForm.invalid">Envoyer</button>
+  </form>
+
+  <div class="success-message" *ngIf="success">
+    Merci pour votre feedback !
+  </div>
+</div>

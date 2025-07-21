@@ -12,6 +12,11 @@ import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';  // 👈 Import ajouté
 import { FormsModule } from '@angular/forms';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { ReminderComponent } from './reminder/reminder.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { PlanningComponent } from './planning/planning.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     HeroSectionComponent,
     CalendarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ReminderComponent,
+    TodoListComponent,
+    PlanningComponent,
+    FeedbackComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

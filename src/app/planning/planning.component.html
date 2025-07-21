@@ -1,0 +1,36 @@
+<div class="planning container mt-5">
+  <h2 class="mb-4 text-center">📅 Planning</h2>
+
+  <form (submit)="addTask()" class="row g-2 align-items-end mb-4">
+    <div class="col-md-5">
+      <label for="taskTitle" class="form-label">Task</label>
+      <input type="text" class="form-control" id="taskTitle" [(ngModel)]="taskTitle" name="taskTitle" placeholder="Enter task" required />
+    </div>
+    <div class="col-md-5">
+      <label for="taskTime" class="form-label">Time</label>
+      <input type="time" class="form-control" id="taskTime" [(ngModel)]="taskTime" name="taskTime" required />
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary w-100" type="submit">Add</button>
+    </div>
+  </form>
+
+  <table class="table table-hover table-striped">
+    <thead class="table-light">
+      <tr>
+        <th>Task</th>
+        <th>Time</th>
+        <th class="text-end">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tasks; let i = index">
+        <td>{{ t.title }}</td>
+        <td>{{ t.time }}</td>
+        <td class="text-end">
+          <button class="btn btn-sm btn-outline-danger" (click)="removeTask(i)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
